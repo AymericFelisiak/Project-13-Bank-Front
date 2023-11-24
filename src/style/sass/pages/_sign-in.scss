@@ -48,9 +48,14 @@
             font-size: 1.1rem;
             font-weight: bold;
             margin-top: 1rem;
-            border-color: #00bc77;
-            background-color: #00bc77;
+            background-color: #6458f5;
             color: #fff;
+            border-radius: 5px;
+            border-style: none;
+        }
+        
+        a {
+            text-decoration: none;
         }
     }
 }
