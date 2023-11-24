@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Footer from './components/footer/Footer';
 import SignIn from './pages/sign-in/SignIn';
+import User from './pages/user/User';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/sign-in" element={<SignIn />} />
+                <Route path="user" element={<User />} />
             </Routes>
         </BrowserRouter>
         <Footer />
