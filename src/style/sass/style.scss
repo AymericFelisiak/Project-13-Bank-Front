@@ -1,4 +1,9 @@
+// Components
 @use 'components/navbar';
+@use 'components/footer';
+
+// Pages
+@use 'pages/home';
 
 html {
     scroll-behavior: smooth;
