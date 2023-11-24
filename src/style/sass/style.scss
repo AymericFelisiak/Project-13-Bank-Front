@@ -7,9 +7,11 @@
 @use 'pages/sign-in';
 @use 'pages/user';
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
 html {
     scroll-behavior: smooth;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -47,4 +49,9 @@ body {
         // background-color: #12002b;
         background-color: #63cd7fbb;
     }
+}
+
+button {
+    border-radius: 5px;
+    font-family: inherit;
 }
