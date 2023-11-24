@@ -4,8 +4,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Footer from './components/footer/Footer';
-import SignIn from './pages/sign-in/SignIn';
-import User from './pages/user/User';
+import Login from './pages/login/Login';
+import Profile from './pages/profile/Profile';
 
 function App() {
     return (
@@ -13,8 +13,8 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/sign-in" element={<SignIn />} />
-                <Route path="/user" element={<User />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
             </Routes>
             <Footer />
         </div>
