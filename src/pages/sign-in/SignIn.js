@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SignIn() {
     return (
-        <main className="main bg-dark">
+        <main className="main bg-dark sign-in-container">
             <section className="sign-in-content">
                 <i className="fa fa-user-circle sign-in-icon"></i>
                 <h1>Sign In</h1>
