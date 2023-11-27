@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 export default function Profile() {
@@ -11,7 +11,7 @@ export default function Profile() {
                 <h1>
                     Welcome back
                     <br />
-                    Tony Jarvis!
+                    <span>{user.body.firstName} {user.body.lastName}</span>
                 </h1>
                 <button className="edit-button">Edit Name</button>
             </div>

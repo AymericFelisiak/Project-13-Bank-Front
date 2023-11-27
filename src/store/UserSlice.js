@@ -39,8 +39,10 @@ const userSlice = createSlice({
     },
     reducers: {
         logout: (state) => {
+            state.loading = false;
             state.user = null;
             state.token = null;
+            state.error = null;
         },
         setEmail: (state, action) => {
             state.email = action.payload;
@@ -94,4 +96,5 @@ const userSlice = createSlice({
     }
 });
 
+export const { logout } = userSlice.actions;
 export default userSlice.reducer;
