@@ -23,15 +23,25 @@
         }
     }
 
-    .main-nav-item {
+    .main-nav-item-wrapper {
         display: flex;
-        align-items: center;
-        text-decoration: none;
-        margin-right: 0.5rem;
-        column-gap: 2px;
 
-        &:hover {
-            text-decoration: underline;
+        .main-nav-item {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-right: 0.5rem;
+            column-gap: 5px;
+
+            &:hover {
+                span {
+                    text-decoration: underline;
+                }
+            }
+
+            .fa {
+                font-size: 30px;
+            }
         }
     }
 }
