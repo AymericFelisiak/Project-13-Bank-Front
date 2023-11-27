@@ -6,6 +6,7 @@ import Home from './pages/home/Home';
 import Footer from './components/footer/Footer';
 import Login from './pages/login/Login';
 import Profile from './pages/profile/Profile';
+import ProtectedRoute from './utils/ProtectedRoute';
 
 function App() {
     return (
@@ -14,7 +15,14 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route
+                    path="/profile"
+                    element={
+                        <ProtectedRoute>
+                            <Profile />
+                        </ProtectedRoute>
+                    }
+                />
             </Routes>
             <Footer />
         </div>
