@@ -4,6 +4,10 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store/Index';
+import { fetchUserProfile } from './store/UserSlice';
+
+const token = localStorage.getItem('jwtToken');
+if(token) store.dispatch(fetchUserProfile(token));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

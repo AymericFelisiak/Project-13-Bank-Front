@@ -39,6 +39,7 @@ const userSlice = createSlice({
     },
     reducers: {
         logout: (state) => {
+            localStorage.removeItem('jwtToken');
             state.loading = false;
             state.user = null;
             state.token = null;
@@ -68,6 +69,7 @@ const userSlice = createSlice({
                 state.error = null;
             })
             .addCase(loginUser.fulfilled, (state, action) => {
+                localStorage.setItem('jwtToken', action.payload.body.token);
                 state.loading = false;
                 state.user = action.payload;
                 state.token = action.payload.body.token;
