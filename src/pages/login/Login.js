@@ -20,7 +20,7 @@ export default function Login() {
 
     const handleLoginEvent = (e) => {
         e.preventDefault();
-        let userCredentials = { email, password };
+        const userCredentials = { email, password };
         dispatch(loginUser(userCredentials)).then((result) => {
             if (result.payload) {
                 dispatch(fetchUserProfile(result.payload.body.token));

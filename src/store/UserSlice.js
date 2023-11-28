@@ -27,6 +27,20 @@ export const fetchUserProfile = createAsyncThunk(
     }
 );
 
+export const updateUserProfile = createAsyncThunk(
+    'user/updateUserProfile',
+    async ({ token, user }) => {
+        const config = { headers: { Authorization: `Bearer ${token}` } };
+        const response = await axios.put(
+            'http://localhost:3001/api/v1/user/profile',
+            user,
+            config
+        );
+        const data = await response.data;
+        return data;
+    }
+);
+
 const userSlice = createSlice({
     name: 'user',
     initialState: {
@@ -78,15 +92,7 @@ const userSlice = createSlice({
             .addCase(loginUser.rejected, (state, action) => {
                 state.loading = false;
                 state.user = null;
-                console.log(action.error.message);
-                if (
-                    action.error.message ===
-                    'Request failed with status code 401'
-                ) {
-                    state.error = 'Access Denied! Invalid Credentials';
-                } else {
-                    state.error = action.error.message;
-                }
+                state.error = action.error.message;
             })
             .addCase(fetchUserProfile.fulfilled, (state, action) => {
                 state.user = action.payload;
@@ -94,7 +100,12 @@ const userSlice = createSlice({
             .addCase(fetchUserProfile.rejected, (state, action) => {
                 state.error = action.error.message;
             })
-            ;
+            .addCase(updateUserProfile.fulfilled, (state, action) => {
+                state.user = action.payload;
+            })
+            .addCase(updateUserProfile.rejected, (state, action) => {
+                state.error = action.error.message;
+            });
     }
 });
 
