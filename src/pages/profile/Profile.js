@@ -5,14 +5,25 @@ import { userNameChecker } from './ProfileTools';
 import AccountData from '../../mock/AccountData.json' 
 import BankAccount from '../../components/bank-account/BankAccount';
 
+/**
+ * Profile pages of the user
+ * Only accessible when connected
+ * Retrieves the user state and shows his accounts' data (the data are placeholders for now)
+ */
+
 export default function Profile() {
+    // Retrieves user state
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
+    // Edit checks if the user is currently editing his first name and last name
     const [edit, setEdit] = useState(false);
+
+    // Changes when the user is currently editing their infos
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
+    // Handler when the user clicks "Save" when editing their infos
     const handleUserEdit = (e) => {
         e.preventDefault();
         if (userNameChecker(user.body.firstName, user.body.lastName, firstName, lastName)) {
@@ -23,6 +34,7 @@ export default function Profile() {
         }
     };
 
+    // Handler when the user clicks "Cancel" when editing their infos
     const handleResetInput = () => {
         setEdit(false);
         setFirstName('');

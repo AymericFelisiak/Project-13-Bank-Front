@@ -1,6 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+/**
+ * Call to the API when user wants to log
+ * Will return a JWT (Json Web Token) if credentials are correct and if not, different errors (see the API doc)
+ */
+
 export const loginUser = createAsyncThunk(
     'user/loginUser',
     async (userCredentials) => {
@@ -12,6 +17,11 @@ export const loginUser = createAsyncThunk(
         return response;
     }
 );
+
+/**
+ * Call to the API when the user log is successful
+ * Returns the user data
+ */
 
 export const fetchUserProfile = createAsyncThunk(
     'user/fetchUserProfile',
@@ -27,6 +37,11 @@ export const fetchUserProfile = createAsyncThunk(
     }
 );
 
+/**
+ * Call to the API when the user updates their first/last name
+ * Returns the new data
+ */
+
 export const updateUserProfile = createAsyncThunk(
     'user/updateUserProfile',
     async ({ token, user }) => {
@@ -40,6 +55,11 @@ export const updateUserProfile = createAsyncThunk(
         return data;
     }
 );
+
+/**
+ * Slice containing all the reducers
+ * Temporary using localStorage to keep user token, it avoids the user the need to relog if they refresh the page
+ */
 
 const userSlice = createSlice({
     name: 'user',
@@ -58,21 +78,6 @@ const userSlice = createSlice({
             state.user = null;
             state.token = null;
             state.error = null;
-        },
-        setEmail: (state, action) => {
-            state.email = action.payload;
-        },
-        setPassword: (state, action) => {
-            state.password = action.payload;
-        },
-        setUser: (state, action) => {
-            state.user = action.payload;
-        },
-        setToken: (state, action) => {
-            state.token = action.payload;
-        },
-        setError: (state, action) => {
-            state.error = action.payload;
         }
     },
     extraReducers: (builder) => {

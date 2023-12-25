@@ -4,6 +4,8 @@ import MoneyIcon from '../../img/icon-money.png';
 import SecurityIcon from '../../img/icon-security.png';
 import FeatureItem from '../../components/feature-item/FeatureItem';
 
+// Main page of the website
+
 export default function Home() {
     return (
         <main className="main">

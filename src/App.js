@@ -8,6 +8,11 @@ import Login from './pages/login/Login';
 import Profile from './pages/profile/Profile';
 import ProtectedRoute from './utils/ProtectedRoute';
 
+/**
+ * Contains routes of the App
+ * The "Profile" route is Protected (see the ProtectedRoute.js in src/utils folder)
+ */
+
 function App() {
     return (
         <div className="App">

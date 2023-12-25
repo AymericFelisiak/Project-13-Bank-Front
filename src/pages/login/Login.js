@@ -3,21 +3,30 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserProfile, loginUser } from '../../store/UserSlice';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * Login page
+ * If the user is already logged, the user is redirected to their profile page
+ */
+
 export default function Login() {
+    // Email and password actual state, changes when the user types in input areas
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    // Retrieves the state of the user, null if no user
     const { loading, error, user } = useSelector((state) => state.user);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    // Redirects the user if already connected
     useEffect(() => {
         if(user) {
             navigate('/profile');
         }
     });
 
+    // Handles the login event when the form is sent
     const handleLoginEvent = (e) => {
         e.preventDefault();
         const userCredentials = { email, password };

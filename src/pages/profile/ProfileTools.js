@@ -9,7 +9,7 @@ function isUserNameDifferent(
     newFirstName,
     newLastName
 ) {
-    if (firstName !== newFirstName && lastName !== newLastName) return true;
+    if (firstName !== newFirstName || lastName !== newLastName) return true;
     return false;
 }
 

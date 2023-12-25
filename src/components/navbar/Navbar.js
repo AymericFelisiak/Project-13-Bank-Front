@@ -4,12 +4,19 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../store/UserSlice';
 
+/**
+ * Navbar used throughout the site
+ * It changes depending of the user login state
+ * - Can sign out if logged
+ * - Can log if not logged
+ */
+
 export default function Navbar() {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
     const handleLogout = (e) => {
-        dispatch(logout());
+        dispatch(logout()); 
     };
 
     return (

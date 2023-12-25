@@ -1,5 +1,11 @@
 import React from 'react';
 
+/**
+ * Component of the bank account descriptions
+ * Shows the available balance of the account
+ * The transaction button will redirect to the account detail
+ */
+
 export default function BankAccount({
     accountName,
     accountAmount,
