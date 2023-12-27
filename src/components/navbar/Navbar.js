@@ -31,7 +31,7 @@ export default function Navbar() {
             </Link>
             {user.user ? (
                 <div className="main-nav-item-wrapper">
-                    <Link to="/login" className="main-nav-item">
+                    <Link to="/profile" className="main-nav-item">
                         <i className="fa fa-user-circle"></i>
                         <span>{user.user.body.firstName}</span>
                     </Link>

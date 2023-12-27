@@ -44,14 +44,13 @@ body {
 
 .main {
     flex: 1;
-
-    &.bg-dark {
-        // background-color: #12002b;
-        background-color: #63cd7fbb;
-    }
 }
 
 button {
     border-radius: 5px;
     font-family: inherit;
+}
+
+.bg-dark {
+    background-color: #12002b;
 }

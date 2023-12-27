@@ -66,7 +66,7 @@ export default function Login() {
                         <label htmlFor="remember-me">Remember me</label>
                     </div>
                     <button className="sign-in-button">
-                        {loading ? 'Loading...' : 'Sign Up'}
+                        {loading ? 'Loading...' : 'Sign In'}
                     </button>
                     {error && <div role="alert">{error}</div>}
                 </form>
